@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { data } from "../data";
 import "./QuestionContainer.css";
 import Question from "./Question";
-import Button from "./Button";
 import EndScreen from "./EndScreen";
 
 function Questions() {
@@ -23,19 +22,13 @@ function Questions() {
           flag={flag}
         />
 
-        <Button
-          display={display}
-          setDisplay={setDisplay}
-          index={index}
-          setIndex={setIndex}
-          data={data}
-        />
+        
       </>
     );
     
   }
   if (index === data.length) {
-    return <EndScreen />;
+    return <EndScreen setIndex={setIndex}/>;
   }
 }
 

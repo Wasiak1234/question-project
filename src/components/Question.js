@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "./Button";
 
-function Question({ index, data, setDisplay, flag }) {
+function Question({ index, data, setDisplay, flag, display, setIndex }) {
   const check = (e, indexes, array) => {
     const target = e.target;
     const answer = data[index].map((answer) => answer.correctAnswer).join("");
@@ -12,6 +13,9 @@ function Question({ index, data, setDisplay, flag }) {
         setDisplay(true);
         flag = false;
       }
+    } else {
+      target.classList.remove("correctAnswer");
+      target.classList.add("wrongAnswer");
     }
   };
 
@@ -37,6 +41,14 @@ function Question({ index, data, setDisplay, flag }) {
             </ul>
           ))
         )}
+
+        <Button
+          display={display}
+          setDisplay={setDisplay}
+          index={index}
+          setIndex={setIndex}
+          data={data}
+        />
       </div>
     </div>
   );
