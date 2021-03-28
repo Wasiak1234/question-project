@@ -1,6 +1,19 @@
 import React from "react";
 
-function Question({ index, check, data}) {
+function Question({ index, data, setDisplay, flag }) {
+  const check = (e) => {
+    const target = e.target;
+    const answer = data[index].map((answer) => answer.correctAnswer).join("");
+
+    if (target.textContent === answer) {
+      target.classList.add("correctAnswer");
+      if (flag) {
+        setDisplay(true);
+        flag = false;
+      }
+    }
+  };
+
   return (
     <div>
       <div className="container">
