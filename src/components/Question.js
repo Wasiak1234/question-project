@@ -1,11 +1,12 @@
 import React from "react";
 
 function Question({ index, data, setDisplay, flag }) {
-  const check = (e) => {
+  const check = (e, indexes, array) => {
     const target = e.target;
     const answer = data[index].map((answer) => answer.correctAnswer).join("");
+    const copyArray = array;
 
-    if (target.textContent === answer) {
+    if (copyArray[indexes] === answer) {
       target.classList.add("correctAnswer");
       if (flag) {
         setDisplay(true);
@@ -25,9 +26,12 @@ function Question({ index, data, setDisplay, flag }) {
           </div>
         ))}
         {data[index].map((el) =>
-          el.answers.map((answer) => (
+          el.answers.map((answer, index, array) => (
             <ul key={answer} className="answers">
-              <li onClick={(e) => check(e)} className="answers__item">
+              <li
+                onClick={(e) => check(e, index, array)}
+                className="answers__item"
+              >
                 {answer}
               </li>
             </ul>
