@@ -1,4 +1,4 @@
-export const questions = [
+export const data = [
   [
     {
       question: "Czyja to flaga?",

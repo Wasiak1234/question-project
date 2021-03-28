@@ -57,8 +57,8 @@
 
 .next {
     position: absolute;
-    left: 40px;
-    bottom: 20px;
+    left: 300px;
+    bottom: 170px;
     padding: 20px;
     background: #029eff;
     outline: none;
@@ -67,9 +67,6 @@
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     cursor: pointer;
-
-
-    
 }
 
 .next:hover {
