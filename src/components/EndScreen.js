@@ -6,7 +6,7 @@ function EndScreen({setIndex}) {
     <div className="container">
       <div className="container__end">
         <Typist>Brawo, odgadłeś wszystkie flagi! :)</Typist>
-        <button onClick={() => setIndex(0)} className="restartButton">Wróć na początek</button>
+        <button onClick={() => setIndex(-1)} className="restartButton">Wróć do menu</button>
       </div>
     </div>
   );

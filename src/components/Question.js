@@ -6,6 +6,7 @@ function Question({ index, data, setDisplay, flag, display, setIndex }) {
     const target = e.target;
     const answer = data[index].map((answer) => answer.correctAnswer).join("");
     const copyArray = array;
+    const allLi = document.querySelectorAll(".answers__item");
 
     if (copyArray[indexes] === answer) {
       target.classList.add("correctAnswer");
@@ -14,7 +15,10 @@ function Question({ index, data, setDisplay, flag, display, setIndex }) {
         flag = false;
       }
     } else {
-      target.classList.remove("correctAnswer");
+      if ([...allLi].some((el) => el.classList.contains("correctAnswer"))) {
+        return;
+      }
+
       target.classList.add("wrongAnswer");
     }
   };

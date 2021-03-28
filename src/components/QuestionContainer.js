@@ -3,16 +3,21 @@ import { data } from "../data";
 import "./QuestionContainer.css";
 import Question from "./Question";
 import EndScreen from "./EndScreen";
+import StartScreen from "./StartScreen";
 
 function Questions() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
   const [display, setDisplay] = useState(false);
   let flag = true;
-  if (data[index]) {
-    
 
+  if(index === -1) {
+      return <StartScreen setIndex={setIndex}/>
+  }
+
+  if (data[index]) {
     return (
       <>
+
         <Question
           index={index}
           display={display}
