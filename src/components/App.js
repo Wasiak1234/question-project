@@ -1,13 +1,12 @@
-import QuestionContainer from './QuestionContainer';
-import './App.css'
-
+import React from 'react';
+import Container from './Container';
 
 function App() {
-  return (
-    <div >
-      <QuestionContainer />
-    </div>
-  );
+    return (
+        <div>
+            <Container />
+        </div>
+    )
 }
 
-export default App;
+export default App
